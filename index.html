@@ -207,7 +207,7 @@ input:focus,textarea:focus{border-color:var(--red);outline:none}
 <div class="bento r">
 <div class="bt"><h3>Complete Shine Kit</h3><p>১১টি প্রোডাক্ট · ওয়াশ থেকে ফিনিশ পর্যন্ত সব</p><div class="big">৩৩% ছাড়</div><p>এক বক্সে সম্পূর্ণ ডিটেইলিং</p><button class="btn o" style="background:var(--on-red);color:var(--red)" data-buy="1">এখনই কিনুন</button></div>
 <div class="bt d"><h3>বিনামূল্যে ডেলিভারি</h3><p>৳৩,০০০ এর উপরে অর্ডারে ঢাকায় ডেলিভারি ফ্রি</p></div>
-<div class="bt l"><h3>হোয়াটসঅ্যাপে অর্ডার</h3><p>বিস্তারিত জানতে সরাসরি মেসেজ করুন</p><a class="btn" href="https://wa.me/8801XXXXXXXXX">মেসেজ করুন</a></div>
+<div class="bt l"><h3>সরাসরি অনলাইন অর্ডার</h3><p>কোনো ঝামেলা ছাড়াই ওয়েবসাইট থেকে অর্ডার করুন</p><button class="btn" id="openOrder">অর্ডার ফর্ম খুলুন</button></div>
 </div>
 
 <h2 class="r">গ্রাহকদের মতামত</h2>
@@ -229,7 +229,7 @@ input:focus,textarea:focus{border-color:var(--red);outline:none}
 <div class="wrap">
 <div><img src="logo.png" alt="Luxury Shine Kit" width="72" height="72" style="display:block;margin-bottom:8px;border-radius:12px;background:var(--white)"><b style="font-size:18px">LUXURY SHINE KIT</b><p style="opacity:.8;margin:6px 0">গাড়ির যত্নে প্রিমিয়াম প্রোডাক্ট, সারা বাংলাদেশে হোম ডেলিভারি।</p><div class="pay"><span>COD</span><span>bKash</span><span>Nagad</span></div></div>
 <div><b>দ্রুত লিংক</b><a href="#shop">সব প্রোডাক্ট</a><a href="#top">অফার</a><a href="#">রিটার্ন পলিসি</a></div>
-<div><b>যোগাযোগ</b><a href="tel:+8801XXXXXXXXX">হটলাইন: 01XXXXXXXXX</a><a href="https://wa.me/8801XXXXXXXXX">হোয়াটসঅ্যাপ</a><a href="https://www.luxuryshinekit.com">www.luxuryshinekit.com</a></div>
+<div><b>যোগাযোগ</b><a href="tel:+8801XXXXXXXXX">হটলাইন: 01XXXXXXXXX</a><a href="https://wa.me/8801XXXXXXXXX">হোয়াটসঅ্যাপ সাপোর্ট</a><a href="https://www.luxuryshinekit.com">www.luxuryshinekit.com</a></div>
 </div>
 <div class="wrap" style="margin-top:16px;opacity:.7">© ২০২৬ Luxury Shine Kit। সর্বস্বত্ব সংরক্ষিত।</div>
 </footer>
@@ -237,7 +237,7 @@ input:focus,textarea:focus{border-color:var(--red);outline:none}
 <nav class="bar" aria-label="দ্রুত নেভিগেশন">
 <a href="#top"><svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v10H3z"/></svg>হোম</a>
 <a href="#shop"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>শপ</a>
-<a class="hot" href="https://wa.me/8801XXXXXXXXX"><svg class="i" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"/></svg>চ্যাট</a>
+<a class="hot" href="https://wa.me/8801XXXXXXXXX"><svg class="i" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"/></svg>সাপোর্ট</a>
 <button id="cartb2"><svg class="i" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>কার্ট<span class="cnt cc2">০</span></button>
 </nav>
 
@@ -247,7 +247,7 @@ input:focus,textarea:focus{border-color:var(--red);outline:none}
 
 <script>
 const PHONE='8801XXXXXXXXX';
-const SCRIPT_URL='PASTE_YOUR_WEB_APP_URL_HERE';
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbwNZ3O36CV3y6BNjjmip_Qf9CWcCMudgcyOb3jfveHfqfjNGUNxAAOhQMZnfBMIZ2o1gg/exec';
 const bn=n=>Number(n).toLocaleString('bn-BD');
 const tk=n=>'৳'+bn(n);
 const CATS={all:'সব',kit:'কম্বো কিট',wash:'ওয়াশ',wheel:'হুইল ও টায়ার',wax:'ওয়াক্স ও কোটিং',acc:'অ্যাকসেসরিজ'};
@@ -316,12 +316,12 @@ document.addEventListener('click',e=>{
   upd();draw();
  }
 });
-['#cartb','#cartb2'].forEach(s=>$(s).onclick=open);
+['#cartb','#cartb2','#openOrder'].forEach(s=>$(s).onclick=open);
 $('#ov').onclick=close;
 document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
 ['#q','#q2'].forEach(s=>$(s).addEventListener('input',e=>{term=e.target.value.trim().toLowerCase();$('#q').value=$('#q2').value=e.target.value;render()}));
 addEventListener('scroll',()=>$('#hd').classList.toggle('s',scrollY>10),{passive:true});
-function tick(){const n=new Date(),e=new Date(n);e.setHours(23,59,59,999);const d=Math.max(0,e-n),p=v=>bn(String(v).padStart(2,'0').length?v:v).padStart?bn(v<10?'0'+v:v):bn(v);
+function tick(){const n=new Date(),e=new Date(n);e.setHours(23,59,59,999);const d=Math.max(0,e-n);
  const z=v=>(v<10?'০':'')+bn(v);$('#h').textContent=z(Math.floor(d/36e5));$('#m').textContent=z(Math.floor(d%36e5/6e4));$('#s').textContent=z(Math.floor(d%6e4/1e3))}
 tick();setInterval(tick,1000);
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
