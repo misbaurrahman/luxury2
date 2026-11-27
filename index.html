@@ -142,8 +142,29 @@ input:focus,textarea:focus{border-color:var(--red);outline:none}
 .r{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
 .r.in{opacity:1;transform:none}
 .x{position:absolute;top:12px;right:12px}
-@media (min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}.trust{grid-template-columns:repeat(3,1fr)}.tr:last-child{grid-column:auto}.hero .wrap{grid-template-columns:1.2fr .8fr;align-items:center}.bento{grid-template-columns:2fr 1fr;grid-template-rows:auto auto}.bento .bt:first-child{grid-row:span 2}.rv{grid-template-columns:repeat(3,1fr)}footer .wrap{grid-template-columns:2fr 1fr 1fr}.search{display:block}.msearch{display:none}.sheet{left:50%;right:auto;width:480px;transform:translate(-50%,105%);border-radius:22px}.sheet.on{transform:translate(-50%,0);bottom:20px}}
+@media (min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}.trust{grid-template-columns:repeat(3,1fr)}.tr:last-child{grid-column:auto}.hero .wrap{grid-template-columns:1.2fr .8fr;align-items:center}.bento{grid-template-columns:1fr 1fr}.rv{grid-template-columns:repeat(3,1fr)}footer .wrap{grid-template-columns:2fr 1fr 1fr}.search{display:block}.msearch{display:none}.sheet{left:50%;right:auto;width:480px;transform:translate(-50%,105%);border-radius:22px}.sheet.on{transform:translate(-50%,0);bottom:20px}}
 @media (min-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}.bar{display:none}body{padding-bottom:0}.toast{bottom:30px}}
+.card{cursor:pointer}
+.img img,.dimg img{width:100%;height:100%;object-fit:contain}
+.ch{margin:26px 0 10px;font-size:18px;display:flex;align-items:baseline;gap:8px}.ch small{color:var(--muted);font-weight:500;font-size:13px}
+.mu{color:var(--muted)}
+.its{margin:0 0 8px;padding:0;list-style:none;border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
+.its li{padding:10px 14px 10px 36px;border-bottom:1px solid var(--line);position:relative}.its li:last-child{border:0}.its li::before{content:"✓";position:absolute;left:14px;color:var(--red);font-weight:700}
+.dv{position:fixed;inset:0;z-index:65;background:var(--bg);overflow-y:auto;transform:translateY(100%);visibility:hidden;transition:transform .3s,visibility .3s}
+.dv.on{transform:none;visibility:visible}
+.dw{max-width:980px;margin:0 auto;padding:calc(12px + env(safe-area-inset-top,0px)) 16px calc(40px + env(safe-area-inset-bottom,0px))}
+.dtop{display:flex;align-items:center;gap:10px;font-weight:700;margin-bottom:12px}
+.dg{display:grid;gap:16px}
+.dimg{aspect-ratio:1;border-radius:18px;border:1px solid var(--line);background:radial-gradient(circle at 50% 40%,var(--card),var(--bg));display:grid;place-items:center;overflow:hidden}
+.dimg svg{width:55%;height:70%}
+.dn{display:block;font-size:24px;margin:6px 0}.dn::before{display:none}
+.bdg{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:0 12px;font-size:13px;font-weight:600;margin:0 6px 6px 0}
+.spec{margin:16px 0;border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
+.spec div{display:flex;justify-content:space-between;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.spec div:last-child{border:0}.spec dt{color:var(--muted)}.spec dd{margin:0;font-weight:600;text-align:right}
+.da{display:grid;gap:8px;margin:14px 0}
+.btn.g{background:transparent;color:var(--red)}.btn.g:hover{background:var(--red);color:var(--on-red)}
+@media (min-width:720px){.dg{grid-template-columns:1fr 1fr;align-items:start}.da{grid-template-columns:1fr 1fr}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.r{opacity:1;transform:none}h1{clip-path:none}html{scroll-behavior:auto}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Store", "name": "Luxury Shine Kit", "url": "https://misbaurrahman.github.io/luxuryshinekit/", "image": "https://misbaurrahman.github.io/luxuryshinekit/og-preview.jpg", "telephone": "+8801806743758", "paymentAccepted": "Cash", "address": {"@type": "PostalAddress", "streetAddress": "Mamun Mansion, 3rd Floor, Dewanhat", "addressLocality": "Chattogram", "addressCountry": "BD"}}</script>
@@ -154,6 +175,12 @@ input:focus,textarea:focus{border-color:var(--red);outline:none}
 <symbol id="bottle" viewBox="0 0 60 100"><rect x="22" y="2" width="16" height="12" rx="3" fill="var(--ink)"/><rect x="25" y="14" width="10" height="8" fill="var(--muted)"/><rect x="8" y="22" width="44" height="74" rx="12" fill="currentColor"/><rect x="14" y="44" width="32" height="30" rx="6" fill="var(--card)" opacity=".92"/><path d="M18 30h6" stroke="var(--card)" stroke-width="3" stroke-linecap="round" opacity=".6"/></symbol>
 <symbol id="box" viewBox="0 0 80 100"><rect x="4" y="30" width="72" height="66" rx="8" fill="currentColor"/><rect x="4" y="30" width="72" height="14" fill="var(--ink)" opacity=".25"/><rect x="14" y="52" width="52" height="30" rx="6" fill="var(--card)" opacity=".92"/><rect x="14" y="4" width="14" height="30" rx="3" fill="var(--ink)"/><rect x="34" y="12" width="14" height="22" rx="3" fill="var(--muted)"/><rect x="54" y="8" width="12" height="26" rx="3" fill="var(--gold)"/></symbol>
 <symbol id="towel" viewBox="0 0 80 100"><rect x="8" y="60" width="64" height="26" rx="6" fill="currentColor"/><rect x="12" y="44" width="64" height="26" rx="6" fill="var(--gold)"/><rect x="4" y="28" width="64" height="26" rx="6" fill="var(--ink)" opacity=".85"/></symbol>
+<symbol id="can" viewBox="0 0 60 100"><rect x="20" y="2" width="20" height="10" rx="2" fill="var(--ink)"/><rect x="12" y="12" width="36" height="8" fill="var(--muted)"/><rect x="10" y="20" width="40" height="76" rx="8" fill="currentColor"/><rect x="15" y="40" width="30" height="34" rx="5" fill="var(--card)" opacity=".92"/></symbol>
+<symbol id="brush" viewBox="0 0 60 100"><rect x="24" y="4" width="12" height="52" rx="6" fill="var(--ink)"/><rect x="18" y="52" width="24" height="10" fill="var(--muted)"/><path d="M14 62h32l-4 34H18z" fill="currentColor"/></symbol>
+<symbol id="light" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="var(--ink)"/><circle cx="40" cy="40" r="26" fill="var(--card)"/><circle cx="40" cy="40" r="14" fill="currentColor"/></symbol>
+<symbol id="horn" viewBox="0 0 80 80"><path d="M10 28h18l30-16v56L28 52H10z" fill="currentColor"/><rect x="62" y="30" width="12" height="20" rx="4" fill="var(--ink)"/></symbol>
+<symbol id="wire" viewBox="0 0 80 80"><path d="M10 60c0-30 20-40 30-20s30 10 30-20" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><rect x="4" y="56" width="10" height="14" rx="3" fill="var(--ink)"/></symbol>
+<symbol id="jug" viewBox="0 0 80 100"><rect x="14" y="20" width="52" height="76" rx="10" fill="currentColor"/><path d="M26 20V8h28v12" fill="none" stroke="var(--ink)" stroke-width="6"/><rect x="22" y="44" width="36" height="30" rx="5" fill="var(--card)" opacity=".92"/></symbol>
 <symbol id="sp" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></symbol>
 </defs>
 </svg>
@@ -175,20 +202,12 @@ input:focus,textarea:focus{border-color:var(--red);outline:none}
 <section class="hero" id="top">
 <div class="wrap">
 <div>
-<span class="eb">ফ্ল্যাশ সেল চলছে</span>
+<span class="eb">গাড়ি ও বাইকের কেয়ার প্রোডাক্ট</span>
 <h1>আপনার গাড়ি হোক <em>শোরুমের মতো</em> ঝকঝকে</h1>
-<p>১১টি প্রিমিয়াম প্রোডাক্ট, এক বক্সে। শ্যাম্পু থেকে ওয়াক্স — সবকিছু একসাথে, সেরা দামে।</p>
-<div class="ha"><button class="btn o" style="background:var(--on-red);color:var(--red)" data-buy="1">কমপ্লিট কিট অর্ডার করুন</button><a class="btn o" href="#shop">সব প্রোডাক্ট দেখুন</a></div>
+<p>বাইক, কার ও সিএনজির কম্বো প্যাকেজ, কেয়ার প্রোডাক্ট, ফগ লাইট ও হর্ন — সারা বাংলাদেশে ক্যাশ অন ডেলিভারি।</p>
+<div class="ha"><a class="btn o" style="background:var(--on-red);color:var(--red)" href="#shop">সব প্রোডাক্ট দেখুন</a><a class="btn o" href="tel:+8801806743758">কল করুন</a></div>
 </div>
-<div class="sale">
-<svg class="art" style="color:var(--red)"><use href="#box"/></svg>
-<div>
-<b>Complete Shine Kit</b>
-<div class="price">৳৩,৯৯০ <s>৳৫,৯৯০</s></div>
-<small>অফার শেষ হতে বাকি</small>
-<div class="cd" aria-live="off"><b id="h">০০</b><b id="m">০০</b><b id="s">০০</b></div>
-</div>
-</div>
+<div class="sale"><svg class="art" style="color:var(--red)"><use href="#can"/></svg><div><b>সব এক জায়গায়</b><div class="price" id="pc"></div><small>ক্যাশ অন ডেলিভারি · সারা বাংলাদেশে</small></div></div>
 </div>
 </section>
 <div class="mq" aria-hidden="true"><div id="mq"></div></div>
@@ -202,12 +221,11 @@ input:focus,textarea:focus{border-color:var(--red);outline:none}
 
 <h2 id="shop" class="r">প্রোডাক্ট ক্যাটাগরি</h2>
 <div class="chips r" id="chips"></div>
-<div class="grid" id="grid"></div>
+<div id="grid"></div>
 
-<h2 class="r">কম্বো অফার</h2>
+<h2 class="r">ডেলিভারি ও অর্ডার</h2>
 <div class="bento r">
-<div class="bt"><h3>Complete Shine Kit</h3><p>১১টি প্রোডাক্ট · ওয়াশ থেকে ফিনিশ পর্যন্ত সব</p><div class="big">৩৩% ছাড়</div><p>এক বক্সে সম্পূর্ণ ডিটেইলিং</p><button class="btn o" style="background:var(--on-red);color:var(--red)" data-buy="1">এখনই কিনুন</button></div>
-<div class="bt d"><h3>বিনামূল্যে ডেলিভারি</h3><p>সব কম্বো প্যাকেজে ডেলিভারি ফ্রি</p></div>
+<div class="bt d"><h3>ডেলিভারি চার্জ</h3><p>চট্টগ্রামের ভিতরে ৳৮০, বাইরে ৳১৩০। সব কম্বো প্যাকেজে ডেলিভারি ফ্রি।</p></div>
 <div class="bt l"><h3>সরাসরি অনলাইন অর্ডার</h3><p>কোনো ঝামেলা ছাড়াই ওয়েবসাইট থেকে অর্ডার করুন</p><button class="btn" id="openOrder">অর্ডার ফর্ম খুলুন</button></div>
 </div>
 
@@ -242,6 +260,7 @@ input:focus,textarea:focus{border-color:var(--red);outline:none}
 <button id="cartb2"><svg class="i" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>কার্ট<span class="cnt cc2">০</span></button>
 </nav>
 
+<div class="dv" id="dv" role="dialog" aria-modal="true" aria-label="প্রোডাক্টের বিস্তারিত"></div>
 <div class="ov" id="ov"></div>
 <div class="sheet" id="sh" role="dialog" aria-modal="true" aria-label="অর্ডার"></div>
 <div class="toast" id="tt"></div>
@@ -251,16 +270,45 @@ const PHONE='8801806743758';
 const SCRIPT_URL='https://script.google.com/macros/s/AKfycbxD0Rb2Lo0QeimGVUl4TonWBGnOvVWQPXCbGCzY84-bESVEsXjx_X-v4GERYjRdDHQP/exec';
 const bn=n=>Number(n).toLocaleString('bn-BD');
 const tk=n=>'৳'+bn(n);
-const CATS={all:'সব',kit:'কম্বো কিট',wash:'ওয়াশ',wheel:'হুইল ও টায়ার',wax:'ওয়াক্স ও কোটিং',acc:'অ্যাকসেসরিজ'};
-const P=[
-{id:1,n:'Complete Shine Kit (১১ পিস)',cat:'kit',p:3990,o:5990,a:'box',c:'--red',r:'৪.৮'},
-{id:2,n:'Luxe Car Shampoo ৫০০ml',cat:'wash',p:650,o:850,a:'bottle',c:'--red',r:'৪.৭'},
-{id:3,n:'Wheel & Tire Cleaner ৫০০ml',cat:'wheel',p:750,o:990,a:'bottle',c:'--ink',r:'৪.৬'},
-{id:4,n:'Wet Tire Dressing ৫০০ml',cat:'wheel',p:890,o:1190,a:'bottle',c:'--ink',r:'৪.৮'},
-{id:5,n:'Ceramic Spray Wax ৩০০ml',cat:'wax',p:1290,o:1690,a:'bottle',c:'--gold',r:'৪.৯'},
-{id:6,n:'Interior Detailer ৫০০ml',cat:'wash',p:690,o:890,a:'bottle',c:'--ok',r:'৪.৫'},
-{id:7,n:'Microfiber Towel (৩ পিস)',cat:'acc',p:590,o:790,a:'towel',c:'--red',r:'৪.৭'},
-{id:8,n:'Foam Applicator ও Wash Mitt',cat:'acc',p:490,o:650,a:'towel',c:'--ink',r:'৪.৪'}];
+const USE_TOTAL=true; // true = combo price includes delivery cost (Total in your sheet); false = Sale price before delivery
+const CATS={all:'সব',bk:'বাইক কম্বো',cr:'কার কম্বো',cn:'সিএনজি কম্বো',ls:'LS স্পেশাল কিট',chem:'স্প্রে, শ্যাম্পু ও কেমিক্যাল',oil:'ইঞ্জিন অয়েল ও ফুয়েল',tool:'ব্রাশ ও ক্লিনিং টুলস',light:'ফগ লাইট',horn:'হর্ন',cng:'সিএনজি পার্টস'};
+const CD='এক প্যাকেজে সব দরকারি প্রোডাক্ট, ডেলিভারি ফ্রি।';
+const DESC={bk:CD,cr:CD,cn:CD,ls:CD,chem:'গাড়ি ও বাইকের পরিষ্কার, সুরক্ষা ও শাইনের জন্য কেয়ার প্রোডাক্ট।',oil:'ইঞ্জিন ও জ্বালানির যত্নের প্রোডাক্ট।',tool:'গাড়ি, বাইক ও ঘরের পরিষ্কার-পরিচ্ছন্নতার ব্রাশ ও টুলস।',light:'গাড়ি ও বাইকের জন্য ফগ লাইট ও ল্যাম্প।',horn:'গাড়ি ও বাইকের জন্য হর্ন।',cng:'সিএনজির জন্য কন্ট্রোল ওয়্যার।'};
+const COL={bk:'--red',cr:'--red',cn:'--red',ls:'--red',chem:'--red',oil:'--gold',tool:'--ink',light:'--gold',horn:'--red',cng:'--muted'};
+const RAW=[
+['s01','chem','Waterless Wash Spray 4 Liter',550,'jug'],['s02','chem','Waterless Wash Spray 500ml',230,'bottle'],['s03','chem','CAR Wash Shampoo 500ml',130,'bottle'],['s04','chem','Leather Cleaner 500ml',130,'bottle'],['s05','chem','Tyre Black 500ml',230,'bottle'],['s06','chem','Glossy Shiner 500ml',230,'bottle'],['s07','chem','Glass Cleaner 500ml',90,'bottle'],['s08','chem','ANTIRUST Spray AR-40 400ml',250,'can'],['s09','chem','AR Dashboard Polish 400ml',230,'can'],['s10','chem','Spray Paint 400ml BLACK',220,'can'],['s25','chem','AR Color Spray Paint - 37 400 ml',220,'can'],['s29','chem','Dashboard Interior Cleaner',200,'bottle'],
+['s18','oil','Octane Booster 30ml',50,'bottle'],['s19','oil','HITLAR 20W-50 2 Liter Engine Oil',650,'jug'],
+['s11','tool','Dashboard Brush',100,'brush'],['s12','tool','Glass Wiper Brush',160,'brush'],['s13','tool','Tyre Clean Brush',100,'brush'],['s14','tool','Rust Cleaner Brush',100,'brush'],['s15','tool','Body Cleaner Brush',350,'brush'],['s16','tool','Paint Brush',30,'brush'],['s17','tool','Microfiber Towel',200,'towel'],['s26','tool','Handheld Dust Cleaning Brush',350,'brush'],['s27','tool','Microfiber Car Duster - Long',330,'brush'],['s32','tool','Microfiber Car Duster - Small',200,'brush'],['s28','tool','Shower Brush',150,'brush'],['s30','tool','Rotating Cleaning Brush',150,'brush'],['s31','tool','Multifunctional Cleaning Brush - Liquid Refill System',220,'brush'],['s33','tool','Sponge Brush',100,'brush'],['s34','tool','Sponge Holder',100,'brush'],['s35','tool','Cleaning Towel Mini',100,'towel'],['s36','tool','Wire Brush Mini',30,'brush'],['t01','tool','Handle Washing Brush',150,'brush'],['t02','tool','Multifunctional Cleaning Brush with Liquid',120,'brush'],['t03','tool','Long Handle Soft Bristle Dusting Brush',220,'brush'],['t04','tool','Soft Interior Cleaning Brush',200,'brush'],['t05','tool','Hanging Dust Removal Brush',250,'brush'],['t06','tool','Gap Cleaning Brush',60,'brush'],
+['ARL4','light','AR 4 Eye Metal 1 Set',1450,'light'],['ARL3','light','AR 3 Eye Metal 1 Set',1400,'light'],['ARL2','light','AR 2 Eye Metal 1 Set',1350,'light'],['ARL2P','light','AR 2 Eye Plastic 1 Set',800,'light'],['ARLS','light','AR Mini Fog Light 1 Set',1100,'light'],['ARL10','light','AR Mini Fog Light 1 Pcs',170,'light'],['ARLH','light','AR Moto Marvel H4 1 Pcs',350,'light'],['s24','light','MINI FOG LIGHT SET',300,'light'],
+['s20','horn','OSCAR TT Horn 12V 1 Pcs',250,'horn'],['LXH1','horn','Oscar Snai Twin Horn Packet',550,'horn'],['LXH2','horn','Oscar Snai Twin Horn Box',650,'horn'],['LXH3','horn','Tornado Snai Twin Horn Packet',520,'horn'],['LXH4','horn','Oscar Snai Twin Horn Gold',950,'horn'],['LXH5','horn','Kaier Snai Twin Horn Box',700,'horn'],['LXH6','horn','Turbo Vip Horn',350,'horn'],['LXH7','horn','Turbo Snai Single Horn',170,'horn'],
+['s21','cng','AR Clutch Wire - CNG 1Pcs',40,'wire'],['s22','cng','AR Accelerator Wire - CNG 1Pcs',40,'wire'],['s23','cng','AR Gear Wire - CNG 1Pcs',40,'wire']];
+const B1=['Waterless Wash Spray 500ml','BIKE Wash Shampoo 500ml','GLOSSY SHINER Spray 500ml','ANTIRUST Spray AR-40 400ml'],T9='Microfiber Towel (Medium)';
+// [id, cat, name, sale price (before delivery), total price (delivery included), items]
+const COMBOS=[
+['B01','bk','Bike Combo B01',1890,2090,[...B1,'CHAIN LUBE Spray 300ml','BLACK Spray Paint 400ml','(Oscar-12v) SNAI TWIN HORN Set - Plastic Box','AR MINI FOG LIGHT Two Color 2 pcs','Octane Booster 30ml',T9]],
+['B02','bk','Bike Combo B02',1205,1405,[...B1,'CHAIN LUBE Spray (Metal) 300ml','BLACK Spray Paint 400ml','Octane Booster 30ml','Tyre Gel 500ml 2Pcs',T9]],
+['BRR','bk','Ride Ready Combo',1425,1625,[...B1,'CHAIN LUBE Spray (Metal) 300ml','BLACK Spray Paint 400ml','Octane Booster 30ml','Tyre Gel 500ml 2Pcs',T9,'Tyre Black Shiner','Wire Brush Mini 1 Pcs']],
+['B03','bk','Bike Combo B03',850,1000,['BIKE Wash Shampoo 500ml','GLOSSY SHINER Spray 500ml','CHAIN LUBE Spray 300ml',T9,'ANTIRUST Spray AR-40 400ml']],
+['B04','bk','Bike Combo B04',690,830,['BIKE Wash Shampoo 500ml','ANTIRUST Spray AR-40 400ml','CHAIN LUBE Spray 300ml',T9,'Wire Brush Mini']],
+['BSC','bk','Bike Super Combo',1150,1300,['AR Mini Two Eye Plastic Light','Oscar Snai Twin Horn (Box)']],
+['C01','cr','Car Combo C01',2485,2735,['Waterless Wash Spray 4 Liter','Waterless Wash Spray 500ml','CAR Wash Shampoo 500ml','Leather Cleaner 500ml','Tyre Black 500ml','Glossy Shiner 500ml','Glass Cleaner 500ml','ANTIRUST Spray AR-40 400ml','AR Dashboard Polish 400ml','Spray Paint 400ml BLACK','Gap Cleaning Brush','Microfiber Car Duster - Small','Plastic Tyre Cleaning Brushes','Wire Brush Mini','Hanging Dust Removal Brush','Paint Brush','Microfiber Towel (M)']],
+['C02','cr','Car Combo C02',1665,1865,['Waterless Wash Spray 500ml','CAR Wash Shampoo 500ml','Leather Cleaner 500ml','Tyre Black 500ml','Glossy Shiner 500ml','AR Dashboard Polish 400ml','Glass Cleaner 500ml','Gap Cleaning Brush','Microfiber Car Duster - Small','Plastic Tyre Cleaning Brushes','Wire Brush Mini','Hanging Dust Removal Brush','Paint Brush','Microfiber Towel (M)']],
+['C03','cr','Car Combo C03',1720,1890,['Waterless Wash Spray 500ml','Tyre Black 500ml','AR Dashboard Polish 400ml','CAR Wash Shampoo 500ml','Glass Cleaner 500ml','Plastic Tyre Cleaning Brushes','Dashboard Brush','Microfiber Towel (M)','Car Wheel Cover - Leather','Multifunctional Cleaning Brushes with Liquid']],
+['C04','cr','Car Combo C04',1305,1455,['Waterless Wash Spray 500ml','AR Dashboard Polish 400ml','CAR Wash Shampoo 500ml','Dashboard Brush','Microfiber Towel (M)','Car Wheel Cover - Leather']],
+['C05','cr','Car Combo C05',1195,1355,['Tyre Black 500ml','AR Dashboard Polish 400ml','Waterless Wash Spray 500ml','Spray Paint 400ml BLACK','Microfiber Towel (M)','Microfiber Car Duster - Long']],
+['CN01','cn','CNG Combo CN01',1900,2100,['HITLAR 20W-50 2 Liter Engine Oil Metal','AR Clutch Wire - CNG 1Pcs','AR Accelerator Wire - CNG 1Pcs','AR Gear Wire - CNG 1Pcs','OSCAR TT Horn 12V 1 Pcs','CNG Washing Shampoo 500 ml','AR Color Spray Paint - 37 400 ml','ANTIRUST Spray AR-40 400ml','Glass Cleaner 500ml','Microfiber Towel (Medium)','Multifunctional Cleaning Brushes with Liquid','Tyre Clean Brush (Plastic)']],
+['CN02','cn','CNG Combo CN02',1540,1690,['HITLAR 20W-50 2 Liter Engine Oil Metal','OSCAR TT Horn 12V 1 Pcs','AR Clutch Wire - CNG 1Pcs','AR Accelerator Wire - CNG 1Pcs','AR Gear Wire - CNG 1Pcs','AR MINI FOG LIGHT Two Color 2 Pcs','AR Color Spray Paint - 37 400 ml']],
+['CN03','cn','CNG Combo CN03',1230,1380,['HITLAR 20W-50 2 Liter Engine Oil Metal','AR MINI FOG LIGHT Two Color 2 Pcs','AR Clutch Wire - CNG 1Pcs','AR Accelerator Wire - CNG 1Pcs','AR Gear Wire - CNG 1Pcs']],
+['LS01','ls','LS Special Kit LS01',2140,2320,['OSCAR Gold Horn','HITLAR Two Eye Plastic Body Fog Light','AR-40 Antirust Spray','Dashboard Polish','Chain Lube 250ml','Color Spray 39','Octane Booster 30ml']],
+['LS02','ls','LS Special Kit LS02',1670,1820,['OSCAR TT Horn 12V','HITLAR Two Eye Metal Body Fog Light','AR-40 Antirust Spray','Chain Lube 200ml','Brake Oil 100ml']],
+['LS03','ls','LS Special Kit LS03',1970,2120,['OSCAR PPP Box Horn 12V','HITLAR Two Eye Metal Body Fog Light','Dashboard Polish','Chain Lube 200ml','Bike Shampoo 100ml','Octane Booster 30ml']],
+['LS04','ls','LS Special Kit LS04',2030,2200,['HITLAR 2 Liter Engine Oil - Metal','HITLAR Three Eye Metal Body Fog Light','Accelerator Wire','Gear Wire','Clutch Wire']],
+['LS05','ls','LS Special Kit LS05',1650,1800,['HITLAR Four Eye Metal Body Fog Light','Tyre Black Spray 500ml','AR-40 Antirust Spray 400ml','Tyre Gel 1 Liter']],
+['LS06','ls','LS Special Kit LS06',2040,2190,['HITLAR Motorcycle Mini Metal Body Fog Light Set','KAIER Snai Twin Horn 12V','AR-40 Antirust Spray 400ml','Color Spray Black 400ml','Bike Shampoo 100ml']],
+['LS07','ls','LS Special Kit LS07',1740,1920,['OSCAR PPP Horn Packet 12V','HITLAR Moto Marvel H4 LED Headlight 2pcs','Waterless 500ml','Room Spray','Shampoo 500ml','Tyre Gel 1 Liter']],
+['LS08','ls','LS Special Kit LS08',1380,1560,['HITLAR Mini Driving Fog Light Set','Chain Lube (Plastic)','Shampoo 100ml','Octane Booster 30ml']]];
+const P=[...COMBOS.map(([id,cat,n,s,t,k])=>({id,cat,n,p:USE_TOTAL?t:s,a:'box',c:COL[cat],w:0,k,cb:1})),...RAW.map(([id,cat,n,p,a])=>({id,cat,n,p,a,c:COL[cat],w:/^(ARL[234S]|ARL2P|ARL10|s24)$/.test(id)?1:0}))];
+let fromList=0,cur='',dq=1;
 const $=s=>document.querySelector(s);
 let cart=JSON.parse(JSON.stringify([])),cat='all',term='';
 try{cart=JSON.parse(localStorage.getItem('lsk')||'[]')}catch(e){}
@@ -268,13 +316,37 @@ cart=cart.filter(i=>P.find(p=>p.id===i.id)&&i.q>0);
 const save=()=>{try{localStorage.setItem('lsk',JSON.stringify(cart))}catch(e){}};
 $('#mq').innerHTML=('<span>কম্বো প্যাকেজে ফ্রি ডেলিভারি ✦ ১০০% অরিজিনাল ✦ ৭ দিনের রিটার্ন ✦ ক্যাশ অন ডেলিভারি ✦ </span>').repeat(8);
 $('#chips').innerHTML=Object.entries(CATS).map(([k,v])=>`<button class="chip${k==='all'?' on':''}" data-c="${k}">${v}</button>`).join('');
+const thumb=x=>`<img src="images/${x.id}.jpg" alt="${x.n}" loading="lazy" data-fb="${x.a}|${x.c}">`;
+document.addEventListener('error',e=>{const t=e.target;if(t.tagName==='IMG'&&t.dataset.fb){const[a,c]=t.dataset.fb.split('|'),s=document.createElement('div');s.innerHTML=`<svg style="color:var(${c})"><use href="#${a}"/></svg>`;t.replaceWith(s.firstChild)}},true);
+const card=x=>`<article class="card" data-open="${x.id}" tabindex="0" role="button" aria-label="${x.n}"><div class="img">${thumb(x)}</div><div class="cb"><h3>${x.n}</h3>${x.k?`<small class="mu">${bn(x.k.length)}টি আইটেম · ফ্রি ডেলিভারি</small>`:''}<div class="price">${tk(x.p)}</div><div class="b"><button class="btn" data-buy="${x.id}">অর্ডার করুন</button><button class="ib" data-add="${x.id}" aria-label="কার্টে যোগ করুন"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>`;
 function render(){
- const L=P.filter(x=>(cat==='all'||x.cat===cat)&&x.n.toLowerCase().includes(term));
- $('#grid').innerHTML=L.length?L.map(x=>`<article class="card"><div class="img"><span class="bd">-${bn(Math.round((1-x.p/x.o)*100))}%</span><svg style="color:var(${x.c})"><use href="#${x.a}"/></svg></div><div class="cb"><h3>${x.n}</h3><div class="rt">★ <span>${x.r}</span></div><div class="price">${tk(x.p)}<s>${tk(x.o)}</s></div><div class="b"><button class="btn" data-buy="${x.id}">অর্ডার করুন</button><button class="ib" data-add="${x.id}" aria-label="কার্টে যোগ করুন"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>`).join(''):'<p>কোনো প্রোডাক্ট পাওয়া যায়নি।</p>';
+ let out='';
+ Object.keys(CATS).filter(k=>k!=='all'&&(cat==='all'||cat===k)).forEach(k=>{const L=P.filter(x=>x.cat===k&&(x.n+' '+(x.k||[]).join(' ')).toLowerCase().includes(term));if(L.length)out+=`<h3 class="ch">${CATS[k]}<small>${bn(L.length)}টি প্রোডাক্ট</small></h3><div class="grid">${L.map(card).join('')}</div>`});
+ $('#grid').innerHTML=out||'<p>কোনো প্রোডাক্ট পাওয়া যায়নি।</p>';
 }
+const BASE=document.title;
+function show(x){
+ cur=x.id;dq=1;
+ const size=((x.n.match(/(\d+(?:\.\d+)?\s?(?:ml|liter|pcs|set))/i)||[])[1]||'').replace(/liter/i,'লিটার').replace(/pcs/i,'পিস').replace(/set/i,'সেট').replace(/ml/i,'মিলি');
+ const br=((x.n.match(/\b(AR|OSCAR|Tornado|Kaier|Turbo|HITLAR)\b/i)||[])[1]||'').toUpperCase();
+ const row=(a,b)=>b?`<div><dt>${a}</dt><dd>${b}</dd></div>`:'';
+ const rel=P.filter(y=>y.cat===x.cat&&y.id!==x.id).slice(0,4);
+ $('#dv').innerHTML=`<div class="dw"><div class="dtop"><button class="ib" data-back aria-label="পিছনে যান"><svg class="i" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button><span>প্রোডাক্টের বিস্তারিত</span></div>
+<div class="dg"><div class="dimg">${thumb(x)}</div><div><small class="mu">${CATS[x.cat]}</small><h2 class="dn">${x.n}</h2><div class="price" style="font-size:30px">${tk(x.p)}</div><div style="margin:8px 0"><span class="bdg">ক্যাশ অন ডেলিভারি</span>${x.cb?'<span class="bdg">ফ্রি ডেলিভারি</span>':''}${x.w?'<span class="bdg">১ বছরের ওয়ারেন্টি</span>':''}</div>
+<div class="li" style="border:0"><span>পরিমাণ</span><span class="q"><button data-dq="-1" aria-label="কমান">−</button><b id="dqn">১</b><button data-dq="1" aria-label="বাড়ান">+</button></span></div>
+<div class="da"><button class="btn" data-dbuy>এখনই অর্ডার করুন</button><button class="btn g" data-dadd>কার্টে যোগ করুন</button><a class="btn g" href="tel:+8801806743758">কল করে অর্ডার করুন</a></div></div></div>
+<dl class="spec">${row('প্রোডাক্ট কোড',x.id.toUpperCase())}${row('ক্যাটাগরি',CATS[x.cat])}${row('ব্র্যান্ড',br)}${row('সাইজ / পরিমাণ',size)}${row('ওয়ারেন্টি',x.w?'১ বছর':'')}${row('পেমেন্ট','শুধু ক্যাশ অন ডেলিভারি')}${row('প্যাকেজের আইটেম',x.k?bn(x.k.length)+'টি':'')}${row('ডেলিভারি চার্জ',x.cb?'ফ্রি':'চট্টগ্রামের ভিতরে ৳৮০ · বাইরে ৳১৩০')}</dl>
+${x.k?`<h2>এই প্যাকেজে যা যা থাকছে</h2><ul class="its">${x.k.map(i=>`<li>${i}</li>`).join('')}</ul>`:''}
+<h2>প্রোডাক্ট সম্পর্কে</h2><p>${DESC[x.cat]}</p>
+<h2>একই ক্যাটাগরির আরও প্রোডাক্ট</h2><div class="grid">${rel.map(card).join('')}</div></div>`;
+ $('#dv').classList.add('on');$('#dv').scrollTop=0;document.body.style.overflow='hidden';document.title=x.n+' | Luxury Shine Kit';
+}
+function hide(){$('#dv').classList.remove('on');document.body.style.overflow='';document.title=BASE;fromList=0}
+function route(){const m=location.hash.match(/^#p-(.+)$/),x=m&&P.find(p=>p.id===decodeURIComponent(m[1]));x?show(x):hide()}
+function vback(){fromList?history.back():(location.hash='shop')}
 function upd(){const n=cart.reduce((a,b)=>a+b.q,0);$('#cc').textContent=bn(n);document.querySelectorAll('.cc2').forEach(e=>e.textContent=bn(n));save()}
 function toast(t){const e=$('#tt');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),1800)}
-function add(id){const i=cart.find(x=>x.id===id);i?i.q++:cart.push({id,q:1});upd()}
+function add(id,q=1){const i=cart.find(x=>x.id===id);i?i.q+=q:cart.push({id,q});upd()}
 function open(){$('#ov').classList.add('on');$('#sh').classList.add('on');draw()}
 function close(){$('#ov').classList.remove('on');$('#sh').classList.remove('on')}
 function done(id){
@@ -284,7 +356,7 @@ function done(id){
 function draw(){
  const sub=cart.reduce((a,b)=>a+P.find(p=>p.id===b.id).p*b.q,0);
  const area=(document.querySelector('input[name=ar]:checked')||{}).value||'80';
- const dl=cart.some(i=>P.find(p=>p.id===i.id).cat==='kit')?0:+area;
+ const dl=cart.some(i=>P.find(p=>p.id===i.id).cb)?0:+area;
  $('#sh').innerHTML=cart.length?`<button class="ib x" id="cl" aria-label="বন্ধ করুন"><svg class="i" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button><h3>অর্ডার কনফার্ম করুন</h3>${cart.map(i=>{const p=P.find(x=>x.id===i.id);return `<div class="li"><span>${p.n}<br><b>${tk(p.p)}</b></span><span class="q"><button data-m="${i.id}" aria-label="কমান">−</button>${bn(i.q)}<button data-p="${i.id}" aria-label="বাড়ান">+</button></span></div>`}).join('')}
 <form id="f" novalidate><input name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px"><label for="nm">আপনার নাম</label><input id="nm" type="text" maxlength="80" required autocomplete="name">
 <label for="ph">মোবাইল নম্বর</label><input id="ph" type="tel" placeholder="01XXXXXXXXX" inputmode="numeric" required autocomplete="tel">
@@ -308,27 +380,34 @@ function draw(){
  }
 }
 document.addEventListener('click',e=>{
- const t=e.target.closest('[data-buy],[data-add],[data-p],[data-m],[data-c]');
- if(t){
-  if(t.dataset.c){cat=t.dataset.c;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===t));render();return}
-  if(t.dataset.buy){add(+t.dataset.buy);open();return}
-  if(t.dataset.add){add(+t.dataset.add);toast('কার্টে যোগ হয়েছে');return}
-  const id=+(t.dataset.p||t.dataset.m),i=cart.find(x=>x.id===id);
-  if(t.dataset.p)i.q++;else{i.q--;if(i.q<1)cart=cart.filter(x=>x.id!==id)}
-  upd();draw();
- }
+ const t=e.target.closest('[data-buy],[data-add],[data-p],[data-m],[data-c],[data-open],[data-dadd],[data-dbuy],[data-dq],[data-back]');
+ if(!t)return;const d=t.dataset;
+ if(d.c){cat=d.c;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===t));render();return}
+ if(d.buy){add(d.buy);open();return}
+ if(d.add){add(d.add);toast('কার্টে যোগ হয়েছে');return}
+ if(d.open){fromList=1;location.hash='p-'+d.open;return}
+ if(d.back!==undefined){vback();return}
+ if(d.dq){dq=Math.max(1,Math.min(99,dq+ +d.dq));$('#dqn').textContent=bn(dq);return}
+ if(d.dadd!==undefined){add(cur,dq);toast('কার্টে যোগ হয়েছে');return}
+ if(d.dbuy!==undefined){add(cur,dq);open();return}
+ const id=d.p||d.m,i=cart.find(x=>x.id===id);
+ if(!i)return;
+ if(d.p)i.q++;else{i.q--;if(i.q<1)cart=cart.filter(x=>x.id!==id)}
+ upd();draw();
 });
 ['#cartb','#cartb2','#openOrder'].forEach(s=>$(s).onclick=open);
 $('#ov').onclick=close;
-document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'){if($('#sh').classList.contains('on'))close();else if($('#dv').classList.contains('on'))vback()}
+ if(e.key==='Enter'&&e.target.dataset&&e.target.dataset.open){fromList=1;location.hash='p-'+e.target.dataset.open}
+});
 ['#q','#q2'].forEach(s=>$(s).addEventListener('input',e=>{term=e.target.value.trim().toLowerCase();$('#q').value=$('#q2').value=e.target.value;render()}));
 addEventListener('scroll',()=>$('#hd').classList.toggle('s',scrollY>10),{passive:true});
-function tick(){const n=new Date(),e=new Date(n);e.setHours(23,59,59,999);const d=Math.max(0,e-n);
- const z=v=>(v<10?'০':'')+bn(v);$('#h').textContent=z(Math.floor(d/36e5));$('#m').textContent=z(Math.floor(d%36e5/6e4));$('#s').textContent=z(Math.floor(d%6e4/1e3))}
-tick();setInterval(tick,1000);
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
 document.querySelectorAll('.r').forEach(e=>io.observe(e));
-render();upd();
+$('#pc').textContent=bn(P.length)+'টি প্রোডাক্ট';
+addEventListener('hashchange',route);
+render();upd();route();
 </script>
 </body>
 </html>
