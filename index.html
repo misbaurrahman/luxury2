@@ -148,6 +148,8 @@ input:focus,textarea:focus{border-color:var(--red);outline:none}
 .img img,.dimg img{width:100%;height:100%;object-fit:contain}
 .ch{margin:26px 0 10px;font-size:18px;display:flex;align-items:baseline;gap:8px}.ch small{color:var(--muted);font-weight:500;font-size:13px}
 .mu{color:var(--muted)}
+.clr{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:44px;margin:12px 0 0;border:1.5px solid var(--red);border-radius:999px;background:transparent;color:var(--red);font-weight:700}
+.clr:hover{background:var(--red);color:var(--on-red)}
 .its{margin:0 0 8px;padding:0;list-style:none;border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
 .its li{padding:10px 14px 10px 36px;border-bottom:1px solid var(--line);position:relative}.its li:last-child{border:0}.its li::before{content:"✓";position:absolute;left:14px;color:var(--red);font-weight:700}
 .dv{position:fixed;inset:0;z-index:65;background:var(--bg);overflow-y:auto;transform:translateY(100%);visibility:hidden;transition:transform .3s,visibility .3s}
@@ -248,9 +250,9 @@ input:focus,textarea:focus{border-color:var(--red);outline:none}
 <div class="wrap">
 <div><img src="logo.png" alt="Luxury Shine Kit" width="72" height="72" style="display:block;margin-bottom:8px;border-radius:12px;background:var(--white)"><b style="font-size:18px">LUXURY SHINE KIT</b><p style="opacity:.8;margin:6px 0">গাড়ির যত্নে প্রিমিয়াম প্রোডাক্ট, সারা বাংলাদেশে হোম ডেলিভারি।</p><div class="pay"><span>ক্যাশ অন ডেলিভারি</span></div></div>
 <div><b>দ্রুত লিংক</b><a href="#shop">সব প্রোডাক্ট</a><a href="#top">অফার</a><a href="#">রিটার্ন পলিসি</a></div>
-<div><b>যোগাযোগ</b><a href="tel:+8801806743758">হটলাইন: 01806-743758</a><a href="https://wa.me/8801806743758">হোয়াটসঅ্যাপ সাপোর্ট</a><a href="https://maps.google.com/?q=Mamun+Mansion+Dewanhat+Chattogram" target="_blank" rel="noopener">অফিস: মামুন মেনশন (৩য় তলা), দেওয়ানহাট, চট্টগ্রাম</a><a href="https://www.luxuryshinekit.com">www.luxuryshinekit.com</a></div>
+<div><b>যোগাযোগ</b><a href="tel:+8801806743758">হটলাইন: 01806-743758</a><a href="https://wa.me/8801806743758">হোয়াটসঅ্যাপ সাপোর্ট</a><a href="https://maps.google.com/?q=Mamun+Mansion+Dewanhat+Chattogram" target="_blank" rel="noopener">অফিস: মামুন মেনশন (৩য় তলা), দেওয়ানহাট, চট্টগ্রাম</a></div>
 </div>
-<div class="wrap" style="margin-top:16px;opacity:.7">© ২০২৬ Luxury Shine Kit। সর্বস্বত্ব সংরক্ষিত।</div>
+<div class="wrap" style="margin-top:16px;opacity:.7">© 2026 Luxury Shine Kit. All rights reserved.</div>
 </footer>
 
 <nav class="bar" aria-label="দ্রুত নেভিগেশন">
@@ -358,6 +360,7 @@ function draw(){
  const area=(document.querySelector('input[name=ar]:checked')||{}).value||'80';
  const dl=cart.some(i=>P.find(p=>p.id===i.id).cb)?0:+area;
  $('#sh').innerHTML=cart.length?`<button class="ib x" id="cl" aria-label="বন্ধ করুন"><svg class="i" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button><h3>অর্ডার কনফার্ম করুন</h3>${cart.map(i=>{const p=P.find(x=>x.id===i.id);return `<div class="li"><span>${p.n}<br><b>${tk(p.p)}</b></span><span class="q"><button data-m="${i.id}" aria-label="কমান">−</button>${bn(i.q)}<button data-p="${i.id}" aria-label="বাড়ান">+</button></span></div>`}).join('')}
+<button type="button" class="clr" data-clear><svg class="i" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 11v6M14 11v6"/></svg>কার্ট খালি করুন</button>
 <form id="f" novalidate><input name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px"><label for="nm">আপনার নাম</label><input id="nm" type="text" maxlength="80" required autocomplete="name">
 <label for="ph">মোবাইল নম্বর</label><input id="ph" type="tel" placeholder="01XXXXXXXXX" inputmode="numeric" required autocomplete="tel">
 <label for="ad">পূর্ণ ঠিকানা</label><textarea id="ad" rows="2" maxlength="300" required autocomplete="street-address"></textarea>
@@ -380,13 +383,14 @@ function draw(){
  }
 }
 document.addEventListener('click',e=>{
- const t=e.target.closest('[data-buy],[data-add],[data-p],[data-m],[data-c],[data-open],[data-dadd],[data-dbuy],[data-dq],[data-back]');
+ const t=e.target.closest('[data-buy],[data-add],[data-p],[data-m],[data-c],[data-open],[data-dadd],[data-dbuy],[data-dq],[data-back],[data-clear]');
  if(!t)return;const d=t.dataset;
  if(d.c){cat=d.c;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===t));render();return}
  if(d.buy){add(d.buy);open();return}
  if(d.add){add(d.add);toast('কার্টে যোগ হয়েছে');return}
  if(d.open){fromList=1;location.hash='p-'+d.open;return}
  if(d.back!==undefined){vback();return}
+ if(d.clear!==undefined){if(confirm('কার্টের সব প্রোডাক্ট মুছে ফেলবেন?')){cart=[];upd();draw();toast('কার্ট খালি করা হয়েছে')}return}
  if(d.dq){dq=Math.max(1,Math.min(99,dq+ +d.dq));$('#dqn').textContent=bn(dq);return}
  if(d.dadd!==undefined){add(cur,dq);toast('কার্টে যোগ হয়েছে');return}
  if(d.dbuy!==undefined){add(cur,dq);open();return}
