@@ -57,25 +57,11 @@ header.s{box-shadow:var(--lift)}
 .btn:disabled{opacity:.5;cursor:not-allowed}
 .btn.o{background:transparent;color:var(--on-red);border-color:var(--on-red)}
 .btn.o:hover{background:var(--on-red);color:var(--red)}
-.hero{position:relative;overflow:hidden;background:radial-gradient(75% 110% at 88% 0%,rgba(255,255,255,.2),transparent 58%),radial-gradient(55% 80% at 0% 100%,rgba(0,0,0,.3),transparent 62%),linear-gradient(135deg,var(--red-d),var(--red) 62%);color:var(--on-red);border-radius:0 0 32px 32px;padding:34px 0 42px}
-.ent{animation:up .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
-@keyframes up{from{opacity:0;transform:translateY(16px)}}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--red-d),var(--red) 60%);color:var(--on-red);border-radius:0 0 28px 28px;padding:28px 0 36px}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.22) 50%,transparent 60%);transform:translateX(-100%);animation:sw 4.5s 1s infinite}
 @keyframes sw{to{transform:translateX(100%)}}
 .hero .wrap{position:relative;z-index:1;display:grid;gap:22px}
-.eb{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:2px 14px 2px 12px;border-radius:999px;font-weight:600;font-size:13px}
-.eb::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pl 1.8s infinite}
-@keyframes pl{0%{box-shadow:0 0 0 0 rgba(245,179,1,.75)}70%,100%{box-shadow:0 0 0 9px rgba(245,179,1,0)}}
-.hero h1{text-shadow:0 2px 14px rgba(0,0,0,.22)}
-.hero .btn.o{background:rgba(255,255,255,.12)}
-.hero .btn.o:hover{background:var(--on-red);color:var(--red)}
-.btn.cta{background:var(--on-red);color:var(--red);border-color:var(--on-red);box-shadow:0 10px 22px -8px rgba(0,0,0,.45)}
-.btn.cta:hover{background:var(--on-red);color:var(--red-d);transform:translateY(-2px)}
-.stats{display:flex;margin-top:20px}
-.stats>div{padding:0 16px;border-left:1px solid rgba(255,255,255,.3)}
-.stats>div:first-child{padding-left:0;border:0}
-.stats b{display:block;font-size:22px;line-height:1.15}
-.stats span{font-size:12px;opacity:.88}
+.eb{display:inline-block;background:rgba(255,255,255,.18);padding:2px 12px;border-radius:999px;font-weight:600;font-size:13px}
 h1{margin:8px 0;font-size:clamp(28px,7vw,52px);line-height:1.25;font-weight:700;animation:rv 1s cubic-bezier(.2,.7,.2,1) both}
 h1 em{font-style:normal;background:var(--on-red);color:var(--red);padding:0 10px;border-radius:10px;display:inline-block}
 @keyframes rv{from{clip-path:inset(0 100% 0 0);opacity:.2}to{clip-path:inset(0 0 0 0);opacity:1}}
@@ -183,35 +169,20 @@ mark{background:rgba(var(--red-rgb),.2);color:inherit;border-radius:3px;padding:
 .nr{text-align:center;padding:28px 16px;background:var(--card);border:1px dashed var(--line);border-radius:14px}
 .nr p{margin:6px 0 14px}.nr .ha{justify-content:center}
 .hero .wrap>*{min-width:0}
-.hs{position:relative;isolation:isolate;margin-top:12px}
-.hs::before,.hs::after{content:"";position:absolute;top:-9px;height:100%;border-radius:20px;background:rgba(255,255,255,.26);z-index:-1}
-.hs::before{left:5%;right:5%}
-.hs::after{left:10%;right:10%;top:-17px;background:rgba(255,255,255,.14)}
-.hs-view{position:relative;overflow:hidden;border-radius:20px;box-shadow:0 0 0 4px rgba(255,255,255,.28),0 26px 44px -14px rgba(0,0,0,.55);background:var(--card);aspect-ratio:2576/1106;touch-action:pan-y;user-select:none;-webkit-user-select:none}
-.hs-view::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.2),transparent 28%);pointer-events:none}
+.hs{position:relative}
+.hs-view{overflow:hidden;border-radius:18px;box-shadow:var(--lift);background:var(--card);aspect-ratio:2576/1106;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .hs-track{display:flex;height:100%;transition:transform .75s cubic-bezier(.65,0,.35,1);will-change:transform}
 .hs-track.drag{transition:none}
 .hs-slide{flex:0 0 100%;height:100%}
-.hs-slide img{display:block;width:100%;height:100%;object-fit:cover;-webkit-user-drag:none;pointer-events:none;transform:scale(1);transition:transform 6s linear}
-.hs-slide.on img{transform:scale(1.03)}
+.hs-slide img{display:block;width:100%;height:100%;object-fit:cover;-webkit-user-drag:none;pointer-events:none}
 .hs-arrow{display:none;position:absolute;top:calc(50% - 18px);transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:0;background:rgba(0,0,0,.45);color:var(--white);place-items:center;opacity:0;transition:opacity .2s,background .2s}
 .hs-arrow.l{left:10px}.hs-arrow.r{right:10px}
 .hs:hover .hs-arrow,.hs-arrow:focus-visible{opacity:1}
 .hs-arrow:hover{background:rgba(0,0,0,.7)}
-.hs-bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;margin-top:10px}
-.hs-cnt{font-weight:700;font-size:13px;letter-spacing:.05em;opacity:.92}
-.hs-dots{display:flex;justify-content:center;gap:2px}
-.hs-dots button{height:26px;min-width:24px;border:0;background:none;padding:0 3px;display:grid;place-items:center}
-.pg{display:block;width:9px;height:9px;border-radius:5px;background:rgba(255,255,255,.5);overflow:hidden;transition:width .35s}
-.pg i{display:block;height:100%;width:0;background:var(--white)}
-.hs-dots button.on .pg{width:36px}
-.hs-dots button.on .pg i{animation:pgf 4.5s linear forwards}
-.hs.paused .pg i{animation-play-state:paused}
-.hs.manual .on .pg i{animation:none;width:100%}
-@keyframes pgf{from{width:0}to{width:100%}}
-.hs-pp{justify-self:end;width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.65);background:transparent;color:var(--on-red);display:grid;place-items:center;padding:0}
-.hs-pp svg{width:14px;height:14px}.hs-pp .pl{display:none}.hs.manual .hs-pp .pa{display:none}.hs.manual .hs-pp .pl{display:block}
-.hs-pp:hover{background:var(--on-red);color:var(--red)}
+.hs-dots{display:flex;justify-content:center;gap:2px;margin-top:6px}
+.hs-dots button{width:26px;height:26px;border:0;background:none;padding:0;display:grid;place-items:center}
+.hs-dots button::before{content:"";width:9px;height:9px;border-radius:5px;background:rgba(255,255,255,.55);transition:width .3s,background .3s}
+.hs-dots button.on::before{width:26px;background:var(--white)}
 @media (min-width:720px){.hs-arrow{display:grid}}
 .clr{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:44px;margin:12px 0 0;border:1.5px solid var(--red);border-radius:999px;background:transparent;color:var(--red);font-weight:700}
 .clr:hover{background:var(--red);color:var(--on-red)}
@@ -232,7 +203,7 @@ mark{background:rgba(var(--red-rgb),.2);color:inherit;border-radius:3px;padding:
 .da{display:grid;gap:8px;margin:14px 0}
 .btn.g{background:transparent;color:var(--red)}.btn.g:hover{background:var(--red);color:var(--on-red)}
 @media (min-width:720px){.mq{margin-top:20px;font-size:15px}.dg{grid-template-columns:1fr 1fr;align-items:start}.da{grid-template-columns:1fr 1fr}}
-@media (prefers-reduced-motion:reduce){.hs-dots button.on .pg i{width:100%}.hs-slide.on img{transform:none}*,*::before,*::after{animation:none!important;transition:none!important}.r{opacity:1;transform:none}h1{clip-path:none}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.r{opacity:1;transform:none}h1{clip-path:none}html{scroll-behavior:auto}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Store", "name": "Luxury Shine Kit", "url": "https://misbaurrahman.github.io/luxuryshinekit/", "image": "https://misbaurrahman.github.io/luxuryshinekit/og-preview.jpg", "telephone": "+8801806743758", "paymentAccepted": "Cash", "address": {"@type": "PostalAddress", "streetAddress": "Mamun Mansion, 3rd Floor, Dewanhat", "addressLocality": "Chattogram", "addressCountry": "BD"}}</script>
 </head>
@@ -267,20 +238,18 @@ mark{background:rgba(var(--red-rgb),.2);color:inherit;border-radius:3px;padding:
 </header>
 
 <section class="hero" id="top">
-
 <div class="wrap">
 <div>
-<span class="eb ent" style="--d:.05s">গাড়ি ও বাইকের কেয়ার প্রোডাক্ট</span>
+<span class="eb">গাড়ি ও বাইকের কেয়ার প্রোডাক্ট</span>
 <h1>আপনার গাড়ি হোক <em>শোরুমের মতো</em> ঝকঝকে</h1>
-<p class="ent" style="--d:.3s">বাইক, কার ও সিএনজির কম্বো প্যাকেজ, কেয়ার প্রোডাক্ট, ফগ লাইট ও হর্ন — সারা বাংলাদেশে ক্যাশ অন ডেলিভারি।</p>
-<div class="ha ent" style="--d:.4s"><a class="btn cta" href="#shop">সব প্রোডাক্ট দেখুন <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn o" href="tel:+8801806743758"><svg class="i" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>কল করুন</a></div>
-<div class="stats ent" style="--d:.5s"><div><b id="st1">৭৮+</b><span>প্রোডাক্ট</span></div><div><b id="st2">২২</b><span>কম্বো প্যাকেজ</span></div><div><b>COD</b><span>ক্যাশ অন ডেলিভারি</span></div></div>
+<p>বাইক, কার ও সিএনজির কম্বো প্যাকেজ, কেয়ার প্রোডাক্ট, ফগ লাইট ও হর্ন — সারা বাংলাদেশে ক্যাশ অন ডেলিভারি।</p>
+<div class="ha"><a class="btn o" style="background:var(--on-red);color:var(--red)" href="#shop">সব প্রোডাক্ট দেখুন</a><a class="btn o" href="tel:+8801806743758">কল করুন</a></div>
 </div>
-<div class="hs ent" style="--d:.2s" id="hs" role="region" aria-roledescription="carousel" aria-label="অফার ব্যানার">
+<div class="hs" id="hs" role="region" aria-roledescription="carousel" aria-label="অফার ব্যানার">
 <div class="hs-view"><div class="hs-track" id="hst"><div class="hs-slide" role="group" aria-roledescription="slide" aria-label="1 / 4"><img src="banners/b1-1600.jpg" srcset="banners/b1-800.jpg 800w, banners/b1-1600.jpg 1600w" sizes="(min-width:1000px) 640px, (min-width:720px) 58vw, 100vw" width="1600" height="687" alt="বাইক কিংবা কার গাড়ির কেয়ারের পণ্য এক জায়গায়। অর্ডার করতে কল করুন ০১৮০৬-৭৪৩৭৫৮" draggable="false" fetchpriority="high"></div><div class="hs-slide" role="group" aria-roledescription="slide" aria-label="2 / 4"><img src="banners/b2-1600.jpg" srcset="banners/b2-800.jpg 800w, banners/b2-1600.jpg 1600w" sizes="(min-width:1000px) 640px, (min-width:720px) 58vw, 100vw" width="1600" height="687" alt="গাড়ির যত্নে ১০০ তে ১০০ — এক বক্সে AR-40, কার শ্যাম্পু, চেইন লুব ও আরও কেয়ার প্রোডাক্ট" draggable="false"></div><div class="hs-slide" role="group" aria-roledescription="slide" aria-label="3 / 4"><img src="banners/b3-1600.jpg" srcset="banners/b3-800.jpg 800w, banners/b3-1600.jpg 1600w" sizes="(min-width:1000px) 640px, (min-width:720px) 58vw, 100vw" width="1600" height="687" alt="ফগ লাইটে ১ বছরের ওয়ারেন্টি। অর্ডার করতে কল করুন ০১৮০৬-৭৪৩৭৫৮" draggable="false"></div><div class="hs-slide" role="group" aria-roledescription="slide" aria-label="4 / 4"><img src="banners/b4-1600.jpg" srcset="banners/b4-800.jpg 800w, banners/b4-1600.jpg 1600w" sizes="(min-width:1000px) 640px, (min-width:720px) 58vw, 100vw" width="1600" height="687" alt="আপনার শখের গাড়ির যত্ন হোক নিজ হাতেই — A to Z বাইক ও কার কেয়ার প্রোডাক্ট" draggable="false"></div></div></div>
 <button type="button" class="hs-arrow l" data-hs="prev" aria-label="আগের ব্যানার"><svg class="i" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
 <button type="button" class="hs-arrow r" data-hs="next" aria-label="পরের ব্যানার"><svg class="i" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
-<div class="hs-bar"><span class="hs-cnt" aria-hidden="true"></span><div class="hs-dots"></div><button type="button" class="hs-pp" aria-label="অটো-স্লাইড বন্ধ করুন"><svg class="i pa" viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="i pl" viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M7 4l13 8-13 8z"/></svg></button></div>
+<div class="hs-dots"></div>
 </div>
 </div>
 </section>
@@ -542,22 +511,21 @@ const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.targ
 document.querySelectorAll('.r').forEach(e=>io.observe(e));
 (()=>{
  const hs=$('#hs');if(!hs)return;
- const tr=$('#hst'),view=hs.querySelector('.hs-view'),dots=hs.querySelector('.hs-dots'),cnt=hs.querySelector('.hs-cnt'),pp=hs.querySelector('.hs-pp'),N=tr.children.length;
+ const tr=$('#hst'),view=hs.querySelector('.hs-view'),dots=hs.querySelector('.hs-dots'),N=tr.children.length;
  const cl=tr.children[0].cloneNode(true);cl.setAttribute('aria-hidden','true');cl.removeAttribute('role');tr.appendChild(cl);
- for(let k=0;k<N;k++){const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','ব্যানার '+bn(k+1));b.innerHTML='<span class="pg"><i></i></span>';b.onclick=()=>{go(k);start()};dots.appendChild(b)}
- let i=0,timer=null,sx=0,dx=0,drag=false,manual=false;
+ for(let k=0;k<N;k++){const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','ব্যানার '+bn(k+1));b.onclick=()=>{go(k);start()};dots.appendChild(b)}
+ let i=0,timer=null,sx=0,dx=0,drag=false;
  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const pos=x=>{tr.style.transform=`translateX(calc(${-i*100}% + ${x||0}px))`};
- const dot=()=>{[...dots.children].forEach((b,k)=>b.classList.toggle('on',k===i%N));[...tr.children].forEach((s,k)=>s.classList.toggle('on',k===i));if(cnt)cnt.textContent=bn(i%N+1)+' / '+bn(N)};
+ const dot=()=>[...dots.children].forEach((b,k)=>b.classList.toggle('on',k===i%N));
  const jump=n=>{tr.classList.add('drag');i=n;pos();dot();void tr.offsetWidth;tr.classList.remove('drag')};
  function go(k){tr.classList.remove('drag');i=k;pos();dot()}
  function next(){if(i>=N)jump(0);go(i+1)}
  function prev(){if(i<=0)jump(N);go(i-1)}
  tr.addEventListener('transitionend',e=>{if(e.target===tr&&i>=N)jump(0)});
- const stop=()=>{clearInterval(timer);timer=null;hs.classList.add('paused')};
- const start=()=>{stop();if(reduce||manual)return;timer=setInterval(next,4500);hs.classList.remove('paused');const a=dots.querySelector('.on .pg i');if(a){a.style.animation='none';void a.offsetWidth;a.style.animation=''}};
+ const stop=()=>{clearInterval(timer);timer=null};
+ const start=()=>{stop();if(!reduce)timer=setInterval(next,4500)};
  hs.addEventListener('click',e=>{const b=e.target.closest('[data-hs]');if(!b)return;b.dataset.hs==='next'?next():prev();start()});
- if(pp)pp.addEventListener('click',()=>{manual=!manual;hs.classList.toggle('manual',manual);pp.setAttribute('aria-label',manual?'অটো-স্লাইড চালু করুন':'অটো-স্লাইড বন্ধ করুন');manual?stop():start()});
  view.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button!==0)return;if(i<=0)jump(N);drag=true;sx=e.clientX;dx=0;tr.classList.add('drag');stop();view.setPointerCapture(e.pointerId)});
  view.addEventListener('pointermove',e=>{if(!drag)return;dx=e.clientX-sx;pos(dx)});
  const end=()=>{if(!drag)return;drag=false;tr.classList.remove('drag');const t=view.offsetWidth*.15;if(dx<-t)next();else if(dx>t)prev();else pos();dx=0;start()};
@@ -567,7 +535,6 @@ document.querySelectorAll('.r').forEach(e=>io.observe(e));
  document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
  dot();start();
 })();
-$('#st1').textContent=bn(P.length)+'+';$('#st2').textContent=bn(P.filter(x=>x.cb).length);
 addEventListener('hashchange',route);
 render();upd();route();
 </script>
