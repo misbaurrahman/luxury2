@@ -47,9 +47,22 @@ header.s{box-shadow:var(--lift)}
 .ib:hover{border-color:var(--red);color:var(--red)}
 .cnt{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;border-radius:10px;background:var(--red);color:var(--on-red);font-size:11px;display:grid;place-items:center;padding:0 5px}
 .msearch{padding:0 0 10px}.msearch .search{display:block}
-.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;scrollbar-width:none}
+.chipw{position:relative;margin:0 -16px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 16px 12px;scroll-padding-inline:16px;scrollbar-width:none;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.cf{position:absolute;top:0;bottom:12px;width:48px;pointer-events:none;opacity:0;transition:opacity .25s;z-index:2}
+.cl{left:0;background:linear-gradient(90deg,var(--bg) 20%,transparent)}
+.cr{right:0;background:linear-gradient(270deg,var(--bg) 25%,transparent)}
+.chipw.ml .cl,.chipw.mr .cr{opacity:1}
+.cn{display:none;position:absolute;right:8px;top:5px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--red);place-items:center;padding:0;z-index:3}
+.chipw.mr .cn{display:grid;animation:nudge 1.6s ease-in-out infinite}
+.chipw.seen .cn{animation:none}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+.swh{display:none;margin-left:auto;align-items:center;gap:4px;font-size:13px;font-weight:600;color:var(--red);transition:opacity .4s}
+.swh.on{display:inline-flex}.swh.off{opacity:0}
+.swh svg{width:16px;height:16px;animation:nudge 1.6s ease-in-out infinite}
+@media (min-width:1000px){.chipw{margin:0}.chips{padding:4px 0 12px}.cf,.cn,.swh{display:none!important}}
 .chips::-webkit-scrollbar{display:none}
-.chip{flex:none;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-weight:600}
+.chip{flex:none;min-height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-weight:600}
 .chip.on,.chip:hover{background:var(--red);border-color:var(--red);color:var(--on-red)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;border:2px solid var(--red);background:var(--red);color:var(--on-red);font-weight:700;transition:transform .15s,background .2s}
 .btn:hover{background:var(--red-d);border-color:var(--red-d)}
@@ -262,8 +275,12 @@ mark{background:rgba(var(--red-rgb),.2);color:inherit;border-radius:3px;padding:
 <div class="tr"><svg class="i" viewBox="0 0 24 24"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.5 9a9 9 0 0 1 14.9-3.4L23 10M1 14l4.6 4.4A9 9 0 0 0 20.5 15"/></svg><span>৭ দিনে রিটার্ন<small>সমস্যা হলে সহজ রিটার্ন</small></span></div>
 </div>
 
-<h2 id="shop" class="r">প্রোডাক্ট ক্যাটাগরি</h2>
-<div class="chips r" id="chips"></div>
+<h2 id="shop" class="r">প্রোডাক্ট ক্যাটাগরি<span class="swh" id="swh" aria-hidden="true">স্লাইড করুন <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></h2>
+<div class="chipw r" id="chipw">
+<div class="chips" id="chips" aria-label="প্রোডাক্ট ক্যাটাগরি"></div>
+<i class="cf cl" aria-hidden="true"></i><i class="cf cr" aria-hidden="true"></i>
+<button type="button" class="cn" id="cnext" aria-label="আরও ক্যাটাগরি দেখুন"><svg class="i" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+</div>
 <div id="grid"></div>
 
 <h2 class="r">ডেলিভারি ও অর্ডার</h2>
@@ -359,6 +376,28 @@ cart=cart.filter(i=>P.find(p=>p.id===i.id)&&i.q>0);
 const save=()=>{try{localStorage.setItem('lsk',JSON.stringify(cart))}catch(e){}};
 $('#mq').innerHTML=('<span>কম্বো প্যাকেজে ফ্রি ডেলিভারি ✦ ১০০% অরিজিনাল ✦ ৭ দিনের রিটার্ন ✦ ক্যাশ অন ডেলিভারি ✦ </span>').repeat(8);
 $('#chips').innerHTML=Object.entries(CATS).map(([k,v])=>`<button class="chip${k==='all'?' on':''}" data-c="${k}">${v}</button>`).join('');
+(()=>{
+ const c=$('#chips'),w=$('#chipw'),sw=$('#swh'),nx=$('#cnext');if(!c||!w)return;
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let seen=false;
+ const used=()=>{if(seen)return;seen=true;w.classList.add('seen');if(sw)sw.classList.add('off')};
+ function state(){const m=c.scrollWidth-c.clientWidth;w.classList.toggle('mr',m>6&&c.scrollLeft<m-6);w.classList.toggle('ml',c.scrollLeft>6);if(sw)sw.classList.toggle('on',m>6);if(c.scrollLeft>24)used()}
+ c.addEventListener('scroll',state,{passive:true});
+ ['touchstart','pointerdown','wheel'].forEach(ev=>c.addEventListener(ev,()=>{used();c.classList.remove('nudge')},{passive:true,once:true}));
+ if(nx)nx.addEventListener('click',()=>{used();c.scrollBy({left:Math.max(160,c.clientWidth*.7),behavior:'smooth'})});
+ addEventListener('resize',state);addEventListener('load',state);
+ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(state);
+ state();
+ /* one-time swipe hint: nudge the strip when it first comes into view on small screens */
+ let done=false;try{done=sessionStorage.getItem('lskhint')==='1'}catch(e){}
+ if(!reduce&&!done&&typeof IntersectionObserver!=='undefined'){
+  const io2=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;io2.disconnect();
+   if(innerWidth>=1000||seen||c.scrollWidth-c.clientWidth<=6)return;
+   try{sessionStorage.setItem('lskhint','1')}catch(e){}
+   setTimeout(()=>{if(seen)return;c.scrollTo({left:90,behavior:'smooth'});setTimeout(()=>{if(!seen)c.scrollTo({left:0,behavior:'smooth'})},750)},500)},{threshold:.9});
+  io2.observe(w);
+ }
+})();
 const thumb=x=>`<img src="images/${x.id}.jpg" alt="${x.n}" loading="lazy" data-fb="${x.a}|${x.c}">`;
 document.addEventListener('error',e=>{const t=e.target;if(t.tagName==='IMG'&&t.dataset.fb){const[a,c]=t.dataset.fb.split('|'),s=document.createElement('div');s.innerHTML=`<svg style="color:var(${c})"><use href="#${a}"/></svg>`;t.replaceWith(s.firstChild)}},true);
 const card=x=>`<article class="card" data-open="${x.id}" tabindex="0" role="button" aria-label="${x.n}"><div class="img">${thumb(x)}</div><div class="cb"><h3>${hl(x.n)}</h3>${x.k?`<small class="mu">${bn(x.k.length)}টি আইটেম · ফ্রি ডেলিভারি</small>`:''}<div class="price">${tk(x.p)}</div><div class="b"><button class="btn" data-buy="${x.id}">অর্ডার করুন</button><button class="ib" data-add="${x.id}" aria-label="কার্টে যোগ করুন"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>`;
@@ -485,7 +524,7 @@ function draw(){
 document.addEventListener('click',e=>{
  const t=e.target.closest('[data-buy],[data-add],[data-p],[data-m],[data-c],[data-open],[data-dadd],[data-dbuy],[data-dq],[data-back],[data-clear],[data-sclear]');
  if(!t)return;const d=t.dataset;
- if(d.c){cat=d.c;setTerm('');return}
+ if(d.c){cat=d.c;setTerm('');t.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});return}
  if(d.sclear!==undefined){setTerm('');return}
  if(d.buy){add(d.buy);open();return}
  if(d.add){add(d.add);toast('কার্টে যোগ হয়েছে');return}
