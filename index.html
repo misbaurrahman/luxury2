@@ -73,7 +73,7 @@ h1 em{font-style:normal;background:var(--on-red);color:var(--red);padding:0 10px
 .cd b{background:var(--red);color:var(--on-red);border-radius:8px;min-width:44px;padding:2px 6px;text-align:center;font-size:18px}
 .price{font-weight:800;font-size:22px;color:var(--red)}
 .price s{color:var(--muted);font-weight:500;font-size:14px;margin-left:6px}
-.mq{background:var(--ink);color:var(--bg);overflow:hidden;white-space:nowrap;padding:8px 0;font-weight:600;margin-top:-1px}
+.mq{background:var(--ink);color:var(--bg);overflow:hidden;white-space:nowrap;padding:5px 0;font-size:14px;line-height:1.6;font-weight:600;margin-top:14px}
 .mq div{display:inline-block;animation:mq 28s linear infinite}
 @keyframes mq{to{transform:translateX(-50%)}}
 .trust{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0}
@@ -148,6 +148,26 @@ input:focus,textarea:focus{border-color:var(--red);outline:none}
 .img img,.dimg img{width:100%;height:100%;object-fit:contain}
 .ch{margin:26px 0 10px;font-size:18px;display:flex;align-items:baseline;gap:8px}.ch small{color:var(--muted);font-weight:500;font-size:13px}
 .mu{color:var(--muted)}
+.search input{padding:0 44px 0 42px;font-size:16px}
+input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance:none}
+.search .si{position:absolute;left:15px;top:22px;transform:translateY(-50%);width:18px;height:18px;color:var(--muted);pointer-events:none}
+.search .sx{position:absolute;right:6px;top:22px;transform:translateY(-50%);width:32px;height:32px;border:0;border-radius:50%;background:var(--line);color:var(--ink);display:none;place-items:center;padding:0}
+.search.has .sx{display:grid}
+.sg{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--lift);z-index:60;overflow-y:auto;max-height:min(70vh,430px);display:none}
+.sg.on{display:block}
+.sg [role=option]{display:flex;align-items:center;gap:10px;padding:8px 12px;cursor:pointer;min-height:54px}
+.sg [role=option].act,.sg [role=option]:hover{background:var(--bg)}
+.sg .th{width:40px;height:40px;flex:none;border-radius:8px;background:var(--bg);display:grid;place-items:center;overflow:hidden}
+.sg .th img,.sg .th svg{width:100%;height:100%;object-fit:contain}
+.sg .t{flex:1;min-width:0}.sg .t b{display:block;font-weight:600;font-size:14px;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sg .t small{color:var(--muted)}
+.sg .pr{font-weight:700;color:var(--red);white-space:nowrap}
+.sg .all{justify-content:center;color:var(--red);font-weight:700;border-top:1px solid var(--line)}
+.sg .sgn{padding:14px;color:var(--muted);text-align:center}
+mark{background:rgba(var(--red-rgb),.2);color:inherit;border-radius:3px;padding:0 1px}
+.rs{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin:20px 0 10px}
+.rs .btn{min-height:40px;padding:0 16px}
+.nr{text-align:center;padding:28px 16px;background:var(--card);border:1px dashed var(--line);border-radius:14px}
+.nr p{margin:6px 0 14px}.nr .ha{justify-content:center}
 .hero .wrap>*{min-width:0}
 .hs{position:relative}
 .hs-view{overflow:hidden;border-radius:18px;box-shadow:var(--lift);background:var(--card);aspect-ratio:2576/1106;touch-action:pan-y;user-select:none;-webkit-user-select:none}
@@ -182,7 +202,7 @@ input:focus,textarea:focus{border-color:var(--red);outline:none}
 .spec div:last-child{border:0}.spec dt{color:var(--muted)}.spec dd{margin:0;font-weight:600;text-align:right}
 .da{display:grid;gap:8px;margin:14px 0}
 .btn.g{background:transparent;color:var(--red)}.btn.g:hover{background:var(--red);color:var(--on-red)}
-@media (min-width:720px){.dg{grid-template-columns:1fr 1fr;align-items:start}.da{grid-template-columns:1fr 1fr}}
+@media (min-width:720px){.mq{margin-top:20px;font-size:15px}.dg{grid-template-columns:1fr 1fr;align-items:start}.da{grid-template-columns:1fr 1fr}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.r{opacity:1;transform:none}h1{clip-path:none}html{scroll-behavior:auto}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Store", "name": "Luxury Shine Kit", "url": "https://misbaurrahman.github.io/luxuryshinekit/", "image": "https://misbaurrahman.github.io/luxuryshinekit/og-preview.jpg", "telephone": "+8801806743758", "paymentAccepted": "Cash", "address": {"@type": "PostalAddress", "streetAddress": "Mamun Mansion, 3rd Floor, Dewanhat", "addressLocality": "Chattogram", "addressCountry": "BD"}}</script>
@@ -208,12 +228,12 @@ input:focus,textarea:focus{border-color:var(--red);outline:none}
 <div class="wrap">
 <div class="hr">
 <a class="logo" href="#top" aria-label="Luxury Shine Kit"><img src="logo.png" alt="Luxury Shine Kit" width="48" height="48"></a>
-<div class="search"><input id="q" type="search" placeholder="প্রোডাক্ট খুঁজুন…" aria-label="প্রোডাক্ট খুঁজুন"></div>
+<div class="search"><input id="q" type="search" placeholder="প্রোডাক্ট বা কোড খুঁজুন…" aria-label="প্রোডাক্ট খুঁজুন"></div>
 <span class="sp"></span>
 <a class="ib" href="tel:+8801806743758" aria-label="কল করুন"><svg class="i" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></a>
 <button class="ib" id="cartb" aria-label="কার্ট"><svg class="i" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg><span class="cnt" id="cc">০</span></button>
 </div>
-<div class="msearch"><div class="search"><input id="q2" type="search" placeholder="প্রোডাক্ট খুঁজুন…" aria-label="প্রোডাক্ট খুঁজুন"></div></div>
+<div class="msearch"><div class="search"><input id="q2" type="search" placeholder="প্রোডাক্ট বা কোড খুঁজুন…" aria-label="প্রোডাক্ট খুঁজুন"></div></div>
 </div>
 </header>
 
@@ -341,12 +361,71 @@ $('#mq').innerHTML=('<span>কম্বো প্যাকেজে ফ্রি
 $('#chips').innerHTML=Object.entries(CATS).map(([k,v])=>`<button class="chip${k==='all'?' on':''}" data-c="${k}">${v}</button>`).join('');
 const thumb=x=>`<img src="images/${x.id}.jpg" alt="${x.n}" loading="lazy" data-fb="${x.a}|${x.c}">`;
 document.addEventListener('error',e=>{const t=e.target;if(t.tagName==='IMG'&&t.dataset.fb){const[a,c]=t.dataset.fb.split('|'),s=document.createElement('div');s.innerHTML=`<svg style="color:var(${c})"><use href="#${a}"/></svg>`;t.replaceWith(s.firstChild)}},true);
-const card=x=>`<article class="card" data-open="${x.id}" tabindex="0" role="button" aria-label="${x.n}"><div class="img">${thumb(x)}</div><div class="cb"><h3>${x.n}</h3>${x.k?`<small class="mu">${bn(x.k.length)}টি আইটেম · ফ্রি ডেলিভারি</small>`:''}<div class="price">${tk(x.p)}</div><div class="b"><button class="btn" data-buy="${x.id}">অর্ডার করুন</button><button class="ib" data-add="${x.id}" aria-label="কার্টে যোগ করুন"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>`;
+const card=x=>`<article class="card" data-open="${x.id}" tabindex="0" role="button" aria-label="${x.n}"><div class="img">${thumb(x)}</div><div class="cb"><h3>${hl(x.n)}</h3>${x.k?`<small class="mu">${bn(x.k.length)}টি আইটেম · ফ্রি ডেলিভারি</small>`:''}<div class="price">${tk(x.p)}</div><div class="b"><button class="btn" data-buy="${x.id}">অর্ডার করুন</button><button class="ib" data-add="${x.id}" aria-label="কার্টে যোগ করুন"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>`;
+const nz=s=>String(s).toLowerCase().replace(/[০-৯]/g,d=>'০১২৩৪৫৬৭৮৯'.indexOf(d)).replace(/[^a-z0-9\u0980-\u09ff]+/g,'');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const AL0={'শ্যাম্পু':['shampoo'],'ব্রাশ':['brush'],'তোয়ালে':['towel'],'টাওয়েল':['towel'],'হর্ন':['horn'],'লাইট':['light'],'ফগ':['fog'],'বাতি':['light'],'অয়েল':['oil'],'তেল':['oil'],'অকটেন':['octane'],'চেইন':['chain'],'গ্লাস':['glass'],'টায়ার':['tyre','tire'],'ড্যাশবোর্ড':['dashboard'],'পলিশ':['polish'],'ক্লিনার':['cleaner'],'স্প্রে':['spray'],'কম্বো':['combo'],'বাইক':['bike'],'কার':['car'],'সিএনজি':['cng'],'ওয়্যার':['wire'],'তার':['wire'],'ওয়াশ':['wash'],'পেইন্ট':['paint'],'লুব':['lube'],'লেদার':['leather'],'কিট':['kit'],'ইঞ্জিন':['engine'],'ওয়াটারলেস':['waterless'],'স্পঞ্জ':['sponge'],'ডাস্টার':['duster'],'ওয়ারেন্টি':['fog','light']};
+const AL={};Object.keys(AL0).forEach(k=>AL[nz(k)]=AL0[k]);
+P.forEach(x=>{x.ix=[x.n,x.id,CATS[x.cat],x.cb?'combo package':'',...(x.k||[])].map(nz).join('|');x.nn=nz(x.n)});
+const toks=q=>String(q).trim().split(/\s+/).map(t=>{const n=nz(t);return n?[n,...(AL[n]||[])]:null}).filter(Boolean);
+function find(q){
+ const T=toks(q),z=nz(q);if(!T.length)return[];
+ return P.map(x=>{let s=x.id.toLowerCase()===z?10:0,ok=true;for(const a of T){if(!a.some(v=>x.ix.includes(v))){ok=false;break}s+=a.some(v=>x.nn.startsWith(v))?3:a.some(v=>x.nn.includes(v))?2:1}if(T.length>1&&x.ix.includes(z)){s+=6;ok=true}return ok?[s,x]:null}).filter(Boolean).sort((a,b)=>b[0]-a[0]).map(a=>a[1]);
+}
+let HL=[];
+const hl=n=>{let s=esc(n);HL.forEach(t=>{s=s.replace(new RegExp('('+t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark>$1</mark>')});return s};
+const hlSet=q=>{HL=String(q).trim().split(/\s+/).filter(t=>t.length>1&&!/[&<>"']/.test(t))};
+const searching=()=>toks(term).length>0;
+function syncChips(){document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',!searching()&&c.dataset.c===cat))}
+function setTerm(v){term=v;document.querySelectorAll('.search input').forEach(i=>{if(i.value!==v)i.value=v});document.querySelectorAll('.search').forEach(b=>b.classList.toggle('has',!!v));syncChips();render()}
 function render(){
  let out='';
- Object.keys(CATS).filter(k=>k!=='all'&&(cat==='all'||cat===k)).forEach(k=>{const L=P.filter(x=>x.cat===k&&(x.n+' '+(x.k||[]).join(' ')).toLowerCase().includes(term));if(L.length)out+=`<h3 class="ch">${CATS[k]}<small>${bn(L.length)}টি প্রোডাক্ট</small></h3><div class="grid">${L.map(card).join('')}</div>`});
- $('#grid').innerHTML=out||'<p>কোনো প্রোডাক্ট পাওয়া যায়নি।</p>';
+ if(searching()){
+  const L=find(term);hlSet(term);
+  out=`<div class="rs"><b role="status">“${esc(term.trim())}” — ${bn(L.length)}টি প্রোডাক্ট পাওয়া গেছে</b><button type="button" class="btn g" data-sclear>সার্চ মুছুন</button></div>`;
+  out+=L.length?`<div class="grid">${L.map(card).join('')}</div>`:`<div class="nr"><b>এই নামে কোনো প্রোডাক্ট পাওয়া যায়নি</b><p class="mu">অন্য নামে খুঁজুন, যেমন: শ্যাম্পু, হর্ন, ফগ লাইট, AR-40, B01</p><div class="ha"><button type="button" class="btn g" data-sclear>সব প্রোডাক্ট দেখুন</button><a class="btn" href="tel:+8801806743758">কল করে জানুন</a></div></div>`;
+ }else{
+  HL=[];
+  Object.keys(CATS).filter(k=>k!=='all'&&(cat==='all'||cat===k)).forEach(k=>{const L=P.filter(x=>x.cat===k);if(L.length)out+=`<h3 class="ch">${CATS[k]}<small>${bn(L.length)}টি প্রোডাক্ট</small></h3><div class="grid">${L.map(card).join('')}</div>`});
+ }
+ $('#grid').innerHTML=out;HL=[];
 }
+function showAll(){
+ document.querySelectorAll('.sg').forEach(s=>s.classList.remove('on'));
+ if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();
+ $('#shop').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+}
+document.querySelectorAll('.search').forEach((box,n)=>{
+ const inp=box.querySelector('input'),sg=document.createElement('div'),x=document.createElement('button');
+ sg.className='sg';sg.id='sg'+n;sg.setAttribute('role','listbox');
+ x.type='button';x.className='sx';x.setAttribute('aria-label','সার্চ মুছুন');x.innerHTML='<svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M18 6L6 18M6 6l12 12"/></svg>';
+ box.insertAdjacentHTML('afterbegin','<svg class="i si" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>');
+ box.append(x,sg);
+ ['autocomplete:off','enterkeyhint:search','role:combobox','aria-autocomplete:list','aria-expanded:false','aria-controls:'+sg.id].forEach(a=>{const[k,v]=a.split(':');inp.setAttribute(k,v)});
+ let act=-1;
+ const open=v=>{sg.classList.toggle('on',v);inp.setAttribute('aria-expanded',v)};
+ const opts=()=>[...sg.querySelectorAll('[role=option]')];
+ const mark=()=>opts().forEach((o,k)=>{o.classList.toggle('act',k===act);if(k===act)inp.setAttribute('aria-activedescendant',o.id)});
+ function build(){
+  if(!toks(inp.value).length){open(false);return}
+  const L=find(inp.value),top=L.slice(0,6);hlSet(inp.value);act=-1;
+  sg.innerHTML=(top.length?top.map((p,k)=>`<div role="option" id="${sg.id}-${k}" data-id="${p.id}"><span class="th">${thumb(p)}</span><span class="t"><b>${hl(p.n)}</b><small>${CATS[p.cat]}</small></span><span class="pr">${tk(p.p)}</span></div>`).join('')+`<div role="option" class="all" id="${sg.id}-a" data-all>সব ${bn(L.length)}টি রেজাল্ট দেখুন</div>`:'<div class="sgn">কোনো মিল পাওয়া যায়নি</div>');
+  HL=[];open(true);
+ }
+ function pick(o){if(o.dataset.all!==undefined){showAll();return}fromList=1;open(false);inp.blur();location.hash='p-'+o.dataset.id}
+ inp.addEventListener('input',()=>{setTerm(inp.value);build()});
+ inp.addEventListener('focus',()=>{if(inp.value)build()});
+ inp.addEventListener('keydown',e=>{
+  const o=opts();
+  if(e.key==='ArrowDown'||e.key==='ArrowUp'){if(!sg.classList.contains('on')){build();return}if(!o.length)return;e.preventDefault();act=e.key==='ArrowDown'?(act+1)%o.length:(act<=0?o.length-1:act-1);mark()}
+  else if(e.key==='Enter'){e.preventDefault();if(act>=0&&o[act])pick(o[act]);else if(searching())showAll()}
+  else if(e.key==='Escape'&&sg.classList.contains('on')){e.stopPropagation();open(false)}
+ });
+ sg.addEventListener('mousedown',e=>e.preventDefault());
+ sg.addEventListener('click',e=>{const o=e.target.closest('[role=option]');if(o)pick(o)});
+ x.addEventListener('click',()=>{setTerm('');open(false);inp.focus()});
+});
+document.addEventListener('click',e=>{if(!e.target.closest('.search'))document.querySelectorAll('.sg.on').forEach(s=>s.classList.remove('on'))});
 const BASE=document.title;
 function show(x){
  cur=x.id;dq=1;
@@ -404,9 +483,10 @@ function draw(){
  }
 }
 document.addEventListener('click',e=>{
- const t=e.target.closest('[data-buy],[data-add],[data-p],[data-m],[data-c],[data-open],[data-dadd],[data-dbuy],[data-dq],[data-back],[data-clear]');
+ const t=e.target.closest('[data-buy],[data-add],[data-p],[data-m],[data-c],[data-open],[data-dadd],[data-dbuy],[data-dq],[data-back],[data-clear],[data-sclear]');
  if(!t)return;const d=t.dataset;
- if(d.c){cat=d.c;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===t));render();return}
+ if(d.c){cat=d.c;setTerm('');return}
+ if(d.sclear!==undefined){setTerm('');return}
  if(d.buy){add(d.buy);open();return}
  if(d.add){add(d.add);toast('কার্টে যোগ হয়েছে');return}
  if(d.open){fromList=1;location.hash='p-'+d.open;return}
@@ -426,7 +506,6 @@ document.addEventListener('keydown',e=>{
  if(e.key==='Escape'){if($('#sh').classList.contains('on'))close();else if($('#dv').classList.contains('on'))vback()}
  if(e.key==='Enter'&&e.target.dataset&&e.target.dataset.open){fromList=1;location.hash='p-'+e.target.dataset.open}
 });
-['#q','#q2'].forEach(s=>$(s).addEventListener('input',e=>{term=e.target.value.trim().toLowerCase();$('#q').value=$('#q2').value=e.target.value;render()}));
 addEventListener('scroll',()=>$('#hd').classList.toggle('s',scrollY>10),{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
 document.querySelectorAll('.r').forEach(e=>io.observe(e));
